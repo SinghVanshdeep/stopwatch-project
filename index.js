@@ -15,9 +15,6 @@ document.getElementById("seconds").innerHTML = `0${seconds}`;
 
 
 function timer(){
-    document.getElementById("msColon1").classList.add("colon");
-    document.getElementById("msColon2").classList.add("colon");
-    
     milliSeconds++;
 
     if (milliSeconds === 1000){
@@ -27,7 +24,7 @@ function timer(){
             seconds = `0${seconds}`;
         }
         document.getElementById("seconds").innerHTML = seconds;
-        if (seconds === 60){
+        if(seconds === 60){
             seconds = 0;
             minutes++;
             if (minutes < 10){
@@ -45,11 +42,17 @@ function timer(){
         }
     }
     document.getElementById("ms").innerHTML = String(milliSeconds).substring(0,2);
+}
+
+function start(){
+    document.getElementById("msColon1").classList.add("colon");
+    document.getElementById("msColon2").classList.add("colon");
+    intervalID = setInterval(timer, 1);
 
 }
 
 document.getElementById("start").addEventListener("click", function(){
-    intervalID = setInterval(timer, 1);
+    start();
 });
 
 document.getElementById("stop").addEventListener("click", function(){

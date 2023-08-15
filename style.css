@@ -90,13 +90,13 @@ button:hover{
 
 	#buttonContainer{
 		width: 12.5rem;
-		justify-content: space-between;
+		justify-content: space-around;
 	}
 
 	button{
 		width: 4rem;
 		height: 2rem;
-		font-size: 1rem;
+		font-size: 0.8rem;
 	}
 
 }
